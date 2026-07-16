@@ -1,0 +1,32 @@
+# Lake build artifacts
+.lake/
+build/
+*.olean
+*.olean.trace
+*.ilean
+*.hash
+
+# Lake manifest (optional - manche behalten es, manche ignorieren es)
+# lake-manifest.json
+
+# Lean toolchain cache
+lean-toolchain
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Backup files
+*.bak

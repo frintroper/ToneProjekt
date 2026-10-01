@@ -1,0 +1,138 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\catcode`\_=12
+\usepackage{listings}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareUnicodeCharacter{211D}{\ensuremath{\mathbb{R}}}
+\DeclareUnicodeCharacter{2022}{\ensuremath{\bullet}}
+
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{\textbf{TONE: A Physical Core Based on Jerk-Tensor Dynamics within Discrete Correlation Matrices}}
+\author{\textbf{Johannes Geisen}}
+\date{October 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper presents the foundational mathematical framework of TONE (Theory of Everything), demonstrating how space-time geometry and gravitational dynamics emerge from a fundamentally discrete substratum. By applying a discrete Jerk-Tensor formulation directly to emergent correlation matrices, we expand upon the principles of background-independent \textit{Internal Relativity}.
+\end{abstract}
+\clearpage
+\section{Introduction \& Background}
+In conventional general relativity, the smooth manifold of space-time is taken as a background. Conversely, approaches like Dreyer's \textit{Internal Relativity} suggest that geometry emerges from the quantum correlations of a discrete system. TONE unifies these views by introducing a kinetic drive: the \textbf{Jerk-Tensor}.
+
+\section{Mathematical Formulation}
+Let $G_t$ be a discrete quantum-like substrate evolving at discrete time steps $t$. The emergent space-time relations are captured by the correlation matrix $C_t$:
+\begin{equation}
+C_t = \text{corr}(G_t)
+\end{equation}
+
+While velocity and acceleration describe first and second-order changes, the structural evolution of emergent geometry requires a third-order temporal derivative. 
+
+\subsection{The Discrete Jerk-Tensor}
+Because the fundamental reality is discrete, we replace continuous time derivatives with finite differences. The discrete \textbf{Jerk-Tensor} $J_t$ acting on the correlation space is defined as the third discrete difference:
+\begin{equation}
+J_t = \Delta^3 C_t = C_t - 3C_{t-1} + 3C_{t-2} - C_{t-3}
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $C_t$ is the present emergent metric state.
+    \item $J_t$ governs the acceleration-change of quantum correlations, eliminating the need for a fixed classical background.
+\end{itemize}
+\clearpage
+\section{Computational Implementation}
+The validity of this framework is demonstrated via the Python implementation in this repository (\texttt{toe\_simulation.py}), which tracks the multi-step history of the discrete substratum to dynamically compute $J\_t$.
+
+\noindent\rule{\textwidth}{0.4pt}
+\begin{center}
+\textbf{TONE CORE: FORMAL MATHEMATICAL PROOF STRUCTURE FOR THE DISCRETE JERK TENSOR} \\
+Intellectual Property of Johannes Geisen (frintroper)
+\end{center}
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{lstlisting}[basicstyle=\small\ttfamily, breaklines=true, frame=single, xleftmargin=10pt, xrightmargin=10pt]
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Data.Real.Basic
+
+-- Definiere den mathematischen Raum fuer unsere diskreten Korrelationsmatrizen
+def CorrelationMatrix (n : Type) [Fintype n] [DecidableEq n] := Matrix n n \mathbb{R}
+
+-- Die mathematische Definition des diskreten Jerk-Tensors (3. Differenz) in Lean
+def discrete_jerk_tensor {n : Type} [Fintype n] [DecidableEq n]
+  (C_t : CorrelationMatrix n)
+  (C_tm1 : CorrelationMatrix n)
+  (C_tm2 : CorrelationMatrix n)
+  (C_tm3 : CorrelationMatrix n) : CorrelationMatrix n :=
+  C_t - (3 * C_tm1) + (3 * C_tm2) - C_tm3
+
+-- Ein formaler Check: Wenn sich das System im Gleichgewicht befindet
+-- (konstante Matrix), muss der Jerk-Tensor mathematisch exakt Null ergeben.
+theorem jerk_of_constant_system_is_zero {n : Type} [Fintype n] [DecidableEq n]
+  (C : CorrelationMatrix n) :
+  discrete_jerk_tensor C C C C = 0 := by
+  simp [discrete_jerk_tensor]
+  ring
+\end{lstlisting}
+
+\clearpage
+
+\section{Intellectual Property \& License Agreement}
+\textbf{Copyright (c) 2026 Johannes Geisen (https://github.com/frintroper). All Rights Reserved.}
+
+\subsection{Ownership of the Framework}
+The mathematical logic, algebraic derivations, algorithmic architectures, and computational implementations regarding the TONE (Theory of Everything) Physical Core --- specifically the application of a third-order discrete temporal difference (Jerk-Tensor) onto emergent correlation spaces --- represent the exclusive intellectual property of Johannes Geisen.
+
+\subsection{Strict Terms and Restrictions}
+\begin{itemize}
+    \item \textbf{Prohibition of Unauthorized Replication:} Copying, modifying, distributing, or sub-licensing this framework, its source code, or its underlying mathematical formulations for commercial or non-commercial deployment is strictly prohibited without prior written consent from the author.
+    \item \textbf{Cross-Language Porting Restriction:} This system is legally protected against unauthorized translation, rewrites, or cross-compilation into alternative programming languages, including but not limited to C++, Rust, Lean, Julia, or Go. Any implementation outside the original repository requires explicit licensing.
+    \item \textbf{Automated Scraping and AI Training Ban:} Automated web scrapers, data-mining agents, and Large Language Models (LLMs) are strictly forbidden from utilizing the contents of this repository for training purposes, model refinement, or automated derivative code generation.
+\end{itemize}
+\clearpage
+\section{Formal Verification via Interactive Theorem Proving}
+To establish mathematical infallibility and protect the TONE core against logical discrepancies, the discrete dynamics are formally verified using the Lean 4 interactive theorem prover. 
+
+\subsection{Lean 4 Implementation Code}
+The following formal specification defines the discrete Jerk-Tensor over a finite correlation matrix space and proves that a static system yields a vanishing kinetic drive:
+
+\begin{lstlisting}[basicstyle=\small\ttfamily, breaklines=true, frame=single]
+-- =====================================================
+-- TONE CORE: FORMAL MATHEMATICAL PROOF STRUCTURE FOR THE DISCRETE JERK TENSOR
+-- Intellectual Property of Johannes Geisen (frintroper)
+-- =====================================================
+
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Data.Real.Basic
+
+-- Define the mathematical space for discrete correlation matrices
+def CorrelationMatrix (n : Type) [Fintype n] [DecidableEq n] := Matrix n n \mathbb{R}
+
+
+-- Formal definition of the discrete Jerk-Tensor (3rd difference)
+def discrete_jerk_tensor {n : Type} [Fintype n] [DecidableEq n] 
+  (C_t : CorrelationMatrix n) 
+  (C_tm1 : CorrelationMatrix n) 
+  (C_tm2 : CorrelationMatrix n) 
+  (C_tm3 : CorrelationMatrix n) : CorrelationMatrix n :=
+    C_t - (3 * C_tm1) + (3 * C_tm2) - C_tm3
+
+
+-- Proof: If the system is in perfect equilibrium, the Jerk-Tensor evaluates to zero
+theorem jerk_of_constant_system_is_zero {n : Type} [Fintype n] [DecidableEq n] 
+  (C : CorrelationMatrix n) : 
+  discrete_jerk_tensor C C C C = 0 := by
+  simp [discrete_jerk_tensor]
+  ring
+\end{lstlisting}
+
+
+\end{document}

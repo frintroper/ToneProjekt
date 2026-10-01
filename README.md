@@ -1,3 +1,15 @@
+
+
+# TONE Physics Core – Taylor Truncation and Jerk as Ontological Primitive
+
+This repository implements the formal core of the Theory of Nearly Everything (TONE). 
+
+## Connection to Internal Relativity of Olaf Dryer
+A major challenge to continuous, background-dependent frameworks like standard GR/ZFC is the elimination of fixed external geometries. This computational core bridges the **TONE Jerk Primitive (n=3)** with the foundational concepts of **Internal Relativity** proposed by **Dr. Olaf Dreyer** (`@olafdreyer`).
+
+By treating the Jerk as a discrete, immanent operator (see `tone_jerk_discreteness.py`), space-time geometry emerges natively from internal system correlations, providing a fully background-independent simulation.
+
+
 # TONE Physics Core
 
 This repository contains a clean Lean 4 formalization of the core idea of **TONE (Theory of Nearly Everything)**.
